@@ -73,6 +73,9 @@ function StyledRadio(props) {
 class Main extends Component {
     state = {
         form: [],
+        isLoggedIn: true,
+        userName: '',
+        password: '',
         houseNumber: '',
         codeForHighRisk: '',
         ipv: false,
@@ -111,10 +114,17 @@ class Main extends Component {
             <div>
                 <Typography variant="h3" >CHW Survey</Typography>
                 <br />
+                {/* Login Button */}
+                <br />
                 <Button variant="contained"
                     color="primary"
                     onClick={(e) => { this.addForm(e) }}>
                     Add Form
+                    </Button>
+                <Button variant="contained"
+                    color="primary"
+                    onClick={this.props.handleLogOut}>
+                    Log Out
                     </Button>
                 {
                     this.state.form.map((val, index) => {
@@ -144,7 +154,7 @@ class Main extends Component {
                                 <TextField id="standard-basic" label="Area or Mohalla Name" />
                                 <TextField id="standard-basic" label="UC Name" />
                                 <br />
-                                <TextField id="standard-basic" label="Street Name" />
+                                <TextField id="standard-basic" label="Street Number" type="number" />
                                 <TextField id="standard-basic" label="Building Name" />
                                 <br />
                                 <br />
@@ -231,7 +241,7 @@ class Main extends Component {
                         )
                     })
                 }
-            </div>
+            </div >
         );
     }
 }
