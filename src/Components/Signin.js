@@ -1,11 +1,21 @@
 import React from 'react';
-import { TextField, Button } from '@material-ui/core';
+import {
+    TextField,
+    Button,
+    Typography
+} from '@material-ui/core';
 // import Main from './Main'
 
 const LogInControl = (props) => {
     console.log(props)
     return (
         <div>
+            <Typography variant="h3" >CHW Survey</Typography>
+            <br />
+            <br />
+            <Typography variant="h5" >Sign In</Typography>
+            <br />
+            <br />
             <TextField
                 // id="standard-basic"
                 label="Username"

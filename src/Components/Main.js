@@ -77,6 +77,12 @@ class Main extends Component {
         userName: '',
         password: '',
         houseNumber: '',
+        areaOrMOhallaName: '',
+        ucName: '',
+        streetNumber: '',
+        buildingName: '',
+        childName: '',
+        numberOfChild: '',
         codeForHighRisk: '',
         ipv: false,
         bcg: false,
@@ -120,11 +126,6 @@ class Main extends Component {
                     color="primary"
                     onClick={(e) => { this.addForm(e) }}>
                     Add Form
-                    </Button>
-                <Button variant="contained"
-                    color="primary"
-                    onClick={this.props.handleLogOut}>
-                    Log Out
                     </Button>
                 {
                     this.state.form.map((val, index) => {
@@ -235,12 +236,19 @@ class Main extends Component {
                                 >
                                     Submit
                                 </Button>
-
-
+                                <br />
+                                <br />
                             </form>
                         )
                     })
                 }
+                <br />
+                <br />
+                <Button variant="contained"
+                    color="primary"
+                    onClick={this.props.handleLogOut}>
+                    Log Out
+                    </Button>
             </div >
         );
     }

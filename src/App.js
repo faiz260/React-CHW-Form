@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import Main from './Components/Main'
+import FirstPage from './Components/FirstPage'
 import LogInControl from './Components/Signin'
-// import { TextField, Button } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 
 class App extends Component {
   state = {
     isLoggedIn: false,
     userName: '',
-    password: ''
+    password: '',
+    admin: true,
+    user: false
   }
   handleChange = (e) => {
     this.setState({
@@ -21,7 +24,7 @@ class App extends Component {
         this.setState({
           isLoggedIn: true,
           userName: '',
-          password: ''
+          password: '',
         })
       )
     } else {
@@ -33,12 +36,17 @@ class App extends Component {
       isLoggedIn: false
     })
   }
+  handleAdmin = () => {
+    this.setState({
+      admin: false
+    })
+  }
   render() {
     // console.log(this.props)
     return (
       <div className="App" >
         <div className="Content">
-          {
+          {/* {
             this.state.isLoggedIn ? <Main handleLogOut={this.handleLogOut} /> : <LogInControl
               userName={this.state.userName}
               password={this.state.password}
@@ -46,6 +54,9 @@ class App extends Component {
               handleChange={this.handleChange}
               handleLogin={this.handleLogin}
             />
+          } */}
+          {
+            this.state.admin ? <FirstPage handleAdmin={this.handleAdmin} /> : <Main />
           }
         </div>
       </div>
