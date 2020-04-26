@@ -77,13 +77,19 @@ class Main extends Component {
         userName: '',
         password: '',
         houseNumber: '',
-        areaOrMOhallaName: '',
+        areaOrMohallaName: '',
         ucName: '',
         streetNumber: '',
         buildingName: '',
+        codeForHighRisk: '',
+        cast: '',
+        guardian: '',
+        language: '',
+        socioeconomicGroup: '',
         childName: '',
         numberOfChild: '',
-        codeForHighRisk: '',
+        birthday: '',
+        gender: '',
         ipv: false,
         bcg: false,
         peniaIII: false
@@ -152,11 +158,36 @@ class Main extends Component {
                                     value={this.state.houseNumber}
                                     onChange={this.handler}
                                 />
-                                <TextField id="standard-basic" label="Area or Mohalla Name" />
-                                <TextField id="standard-basic" label="UC Name" />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Area or Mohalla Name"
+                                    name="areaOrMohallaName"
+                                    value={this.state.areaOrMohallaName}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="UC Name"
+                                    name="ucName"
+                                    value={this.state.ucName}
+                                    onChange={this.handler}
+                                />
                                 <br />
-                                <TextField id="standard-basic" label="Street Number" type="number" />
-                                <TextField id="standard-basic" label="Building Name" />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Street Number"
+                                    type="number"
+                                    name="streetNumber"
+                                    value={this.state.streetNumber}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Building Name"
+                                    value={this.state.buildingName}
+                                    name="buildingName"
+                                    onChange={this.handler}
+                                />
                                 <br />
                                 <br />
                                 {/* Basic Information */}
@@ -176,16 +207,53 @@ class Main extends Component {
                                     <FormControlLabel className="radioButtons" value="4" control={<StyledRadio />} label="4" />
                                     <FormControlLabel className="radioButtons" value="5" control={<StyledRadio />} label="5" />
                                 </RadioGroup>
-                                <TextField id="standard-basic" label="Cast" />
-                                <TextField id="standard-basic" label="Guardian" />
-                                <TextField id="standard-basic" label="Language" />
-                                <TextField id="standard-basic" label="Socioeconomic Group" />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Cast"
+                                    name="cast"
+                                    value={this.state.cast}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Guardian"
+                                    name="guardian"
+                                    value={this.state.value}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Language"
+                                    name="language"
+                                    value={this.state.language}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Socioeconomic Group"
+                                    name="socioeconomicGroup"
+                                    value={this.state.socioeconomicGroup}
+                                    onChange={this.handler}
+                                />
                                 <br />
                                 <br />
                                 {/* Children Information */}
                                 <Typography variant="h5">Children Information</Typography>
-                                <TextField id="standard-basic" label="Child Name" />
-                                <TextField id="standard-basic" label="Number Of Child" type="number" />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Child Name"
+                                    name="childName"
+                                    value={this.state.value}
+                                    onChange={this.handler}
+                                />
+                                <TextField
+                                    id="standard-basic"
+                                    label="Number Of Child"
+                                    type="number"
+                                    name="numberOfChild"
+                                    value={this.state.numberOfChild}
+                                    onChange={this.handler}
+                                />
                                 <br />
                                 <br />
                                 <FormLabel>Birthday</FormLabel>
@@ -193,13 +261,23 @@ class Main extends Component {
                                     id="standard-basic"
                                     label=""
                                     type="date"
+                                    name="birthday"
+                                    value={this.state.birthday}
+                                    onChange={this.handler}
                                     InputLabelProps={{
                                         shrink: true,
                                     }} />
                                 <br />
                                 <br />
                                 <FormLabel component="legend">Gender</FormLabel>
-                                <RadioGroup className="radioGroups" defaultValue="female" aria-label="gender" name="customized-radios">
+                                <RadioGroup
+                                    className="radioGroups"
+                                    defaultValue="female"
+                                    aria-label="gender"
+                                    name="gender"
+                                    value={this.state.gender}
+                                    onChange={this.handler}
+                                >
                                     <FormControlLabel value="female" control={<StyledRadio />} label="Female" />
                                     <FormControlLabel value="male" control={<StyledRadio />} label="Male" />
                                     <FormControlLabel value="other" control={<StyledRadio />} label="Other" />

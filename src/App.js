@@ -46,7 +46,7 @@ class App extends Component {
     return (
       <div className="App" >
         <div className="Content">
-          {/* {
+          {
             this.state.isLoggedIn ? <Main handleLogOut={this.handleLogOut} /> : <LogInControl
               userName={this.state.userName}
               password={this.state.password}
@@ -54,9 +54,9 @@ class App extends Component {
               handleChange={this.handleChange}
               handleLogin={this.handleLogin}
             />
-          } */}
+          }
           {
-            this.state.admin ? <FirstPage handleAdmin={this.handleAdmin} /> : <Main />
+            // this.state.admin ? <FirstPage handleAdmin={this.handleAdmin} /> : <Main />
           }
         </div>
       </div>
